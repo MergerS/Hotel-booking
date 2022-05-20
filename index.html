@@ -33,7 +33,7 @@
               class="search__input"
               placeholder="Search Location"
             />
-            <button class="search__button">
+            <button class="search__button ">
               <img src="img/search-button.svg" alt="icon: search" class="" />
             </button>
           </form>
@@ -263,11 +263,13 @@
           subscribe to our
           <span class="newsletter-title__strong">Newsletter</span>
         </h2>
-        <form action="#" class="subscribe newsletter__subscribe">
+        <form action="send.php" class="subscribe newsletter__subscribe form">
           <input
-            type="text"
+            type="email"
             class="subscribe__input"
             placeholder="Your email address"
+            name="email"
+            required
           />
           <button class="subscribe__button">Send</button>
         </form>
@@ -484,19 +486,25 @@
           </div>
           <div class="footer__contact-form">
             <h3 class="footer__title footer__title--mb3">Send us a message</h3>
-            <form action="send.php" method="post" class="footer__form">
-              <input
+            <form action="send.php" method="post" class="footer__form form">
+              <div class="footer__input--group">
+                <input
                 type="text"
                 class="input footer__input"
                 placeholder="Your Full Name*"
                 name="name"
-              />
-              <input
-                type="text"
+                required
+                />
+              </div>
+              <div class="footer__input--group">
+                <input
+                type="tel"
                 class="input footer__input"
                 placeholder="Phone Number*"
                 name="phone"
+                required
               />
+              </div>
               <textarea
                 class="message footer__message"
                 placeholder="Message"
@@ -516,24 +524,27 @@
           <img src="img/close.svg" alt="icon:close" />
         </a>
         <h3 class="modal__title">Booking</h3>
-        <form action="send.php" method="post" class="modal__form">
+        <form action="send.php" method="post" class="modal__form form">
           <input
             type="text"
             class="input modal__input"
             placeholder="Your Full Name*"
             name="name"
+            required
           />
           <input
-            type="text"
+            type="tel"
             class="input modal__input"
             placeholder="Phone Number*"
             name="phone"
+            required
           />
           <input
-            type="text"
+            type="email"
             class="input modal__input"
             placeholder="Email*"
-            name="Email"
+            name="email"
+            required
           />
           <textarea
             class="message modal__message"
@@ -547,6 +558,7 @@
     </div>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
